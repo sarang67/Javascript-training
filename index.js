@@ -1,4 +1,5 @@
-// 2 function execution context
+// 2 scope chain  :-
+// function can access its variable , then it will check in its parent then last it will check in its global scope
 
 var name = "John";
 
@@ -16,7 +17,16 @@ function second() {
 
 function third() {
   var c = "Hey";
-  var y = c + name;
+  var z = c + name;
+  var name2 = "sonu";
+
+  function fourth() {
+    var name = "teenu";
+    console.log(name);
+    console.log(name2);
+    console.log(name3);
+  }
+  fourth();
 }
 
 first();
