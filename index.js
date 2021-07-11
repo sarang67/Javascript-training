@@ -1,33 +1,51 @@
-// 2 scope chain  :-
-// function can access its variable , then it will check in its parent then last it will check in its global scope
+// premitive type and oject type
+// pass by value and pass by refrence
+/*
+  Data type
+    premitive type:- single value  :- number , string , boolean , undefined  (pass by value)
+    object type:-  collection of property and its value : object, array, function  (pass by refrence)
+*/
 
-var name = "John";
+var one = 1;
+var isMarried = true;
+var myName = "sarang jain";
 
-function first() {
-  var a = "Hello";
-  second();
-  var x = a + name;
-}
+var myinfo = {
+  one: 1,
+  age: 32,
+  address: "pune",
+};
 
-function second() {
-  var b = "Hi";
-  third();
-  var z = b + name;
-}
+var two = one;
 
-function third() {
-  var c = "Hey";
-  var z = c + name;
-  var name2 = "sonu";
+console.log(one);
+console.log(two);
 
-  function fourth() {
-    var name = "teenu";
-    console.log(name);
-    console.log(name2);
-    console.log(name3);
-  }
-  fourth();
-}
+one = one + 1;
+two = two + 5;
 
-first();
-console.log("test");
+console.log(one);
+console.log(two);
+
+var yourInfo = myinfo;
+
+console.log(myinfo);
+console.log(yourInfo);
+
+myinfo.one = 2;
+
+console.log(myinfo);
+console.log(yourInfo);
+
+myinfo.age = 50;
+
+console.log(myinfo);
+console.log(yourInfo);
+
+var thirdInfo = yourInfo;
+
+thirdInfo.myName = "Amit";
+
+console.log(myinfo);
+console.log(yourInfo);
+console.log(thirdInfo);
